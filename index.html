@@ -3,35 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xooxle</title>
+<title>FARAIK CASA</title>
 <style>
-body{font-family:Arial; text-align:center; margin:0; background:#fff; display:flex; flex-direction:column; min-height:100vh}
-.logo{font-size:80px; font-weight:bold; margin-top:120px; margin-bottom:20px}
-.logo span:nth-child(1){color:#4285F4} span:nth-child(2){color:#EA4335} span:nth-child(3){color:#FBBC05} span:nth-child(4){color:#4285F4} span:nth-child(5){color:#34A853} span:nth-child(6){color:#EA4335}
-.search{width:90%; max-width:550px; height:50px; border:1px solid #ddd; border-radius:25px; margin:auto; display:flex; align-items:center; padding:0 15px}
-.search input{flex:1; border:none; outline:none; font-size:16px}
-.btns{margin-top:20px}
-.btns button{padding:10px 20px; margin:5px; background:#f8f9fa; border:1px solid #eee; border-radius:5px}
-.links{margin-top:40px; display:flex; justify-content:center; gap:15px}
-.card{border:1px solid #ddd; border-radius:10px; padding:15px 25px; text-decoration:none; color:#000}
-footer{margin-top:auto; background:#f2f2f2; padding:12px; font-size:12px}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:#fff}
+.header{background:#8B0000;color:#fff;padding:15px;text-align:center;font-size:28px;font-weight:bold}
+.hero{background:#fff3e0;padding:60px 20px;text-align:center}
+.hero h1{color:#8B0000;font-size:32px}
+.btn{background:#8B0000;color:#fff;padding:15px 30px;border-radius:30px;text-decoration:none;display:inline-block;margin-top:20px;font-size:18px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px}
+.card{border:1px solid #ddd;border-radius:10px;padding:10px;text-align:center}
+.card div{font-size:50px;height:120px;display:flex;align-items:center;justify-content:center;background:#f9f9f9;border-radius:10px}
+.footer{background:#222;color:#fff;text-align:center;padding:20px;margin-top:20px}
 </style>
 </head>
 <body>
-<div class="logo"><span>X</span><span>o</span><span>o</span><span>x</span><span>l</span><span>e</span></div>
-<div class="search"><span>🔍</span><input id="q" placeholder="قلب في Xooxle"><span>🎤</span></div>
-<div class="btns">
-<button onclick="search()">بحث Xooxle</button>
-<button onclick="location.href='XooxleEarth/'">ضربة حظ 🌍</button>
+<div class="header">FARAIK CASA - مفروشات فاخرة</div>
+<div class="hero">
+<h1>مرحبا بكم في FARAIK CASA</h1>
+<p>أجود المفروشات بثمن المصنع - توصيل لجميع المدن</p>
+<a class="btn" href="https://wa.me/212600000000">اطلب عبر واتساب</a>
 </div>
-<div class="links">
-<a class="card" href="XooxleEarth/">🌍<br>XooxleEarth</a>
-<a class="card" href="#">🗺️<br>XooxleMaps</a>
+<div class="products">
+<div class="card"><div>🛏️</div><h3>مانط</h3><p>299 درهم</p></div>
+<div class="card"><div>🛋️</div><h3>كاشات</h3><p>199 درهم</p></div>
+<div class="card"><div>✨</div><h3>مخاد</h3><p>99 درهم</p></div>
+<div class="card"><div>🏠</div><h3>طقم سرير</h3><p>499 درهم</p></div>
 </div>
-<footer>المغرب | جمعة مباركة 🌙 - Xooxle.com 2026 - من أجل يونس ❤️</footer>
-<script>
-function search(){let v=document.getElementById('q').value; if(v) window.open('https://www.google.com/search?q='+v,'_blank')}
-document.getElementById('q').addEventListener('keypress',e=>{if(e.key==='Enter') search()});
-</script>
+<div class="footer">© FARAIK CASA - الدار البيضاء 2026</div>
 </body>
 </html>
