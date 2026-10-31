@@ -1,0 +1,15 @@
+{
+  "name": "Xooxle Internet",
+  "short_name": "Xooxle",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0a6bc2",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/300/300221.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
