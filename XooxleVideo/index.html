@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xooxle Video</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#fff;text-align:center}
+.logo{margin-top:40px;font-size:48px;font-weight:bold;letter-spacing:-2px}
+.logo span:nth-child(1){color:#4285F4}
+.logo span:nth-child(2){color:#EA4335}
+.logo span:nth-child(3){color:#FBBC05}
+.logo span:nth-child(4){color:#4285F4}
+.logo span:nth-child(5){color:#34A853}
+.logo span:nth-child(6){color:#EA4335}
+.sub{color:#666;font-size:18px;margin-top:-10px}
+.search-box{margin:30px auto;max-width:600px;display:flex;box-shadow:0 2px 8px rgba(0,0,0,0.2);border-radius:30px;padding:5px 15px}
+.search-box input{flex:1;border:none;outline:none;font-size:18px;padding:12px}
+.search-box button{background:#4285F4;color:white;border:none;border-radius:25px;padding:10px 25px;font-size:16px;cursor:pointer}
+#playerWrap{margin:20px auto;max-width:800px;display:none}
+#playerWrap iframe{width:100%;height:450px;border:none;border-radius:12px}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:15px;max-width:1100px;margin:20px auto;padding:0 15px}
+.video-card{cursor:pointer;border-radius:12px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.15);text-align:left}
+.video-card img{width:100%}
+.video-card p{padding:10px;margin:0;font-size:14px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="logo"><span>X</span><span>o</span><span>o</span><span>x</span><span>l</span><span>e</span></div>
+<div class="sub">Video</div>
+
+<div class="search-box">
+<input id="q" type="text" placeholder="Search videos...">
+<button onclick="searchVideo()">Search</button>
+</div>
+
+<div id="playerWrap">
+<iframe id="player" src="" allowfullscreen></iframe>
+</div>
+
+<div class="videos" id="videos"></div>
+
+<script>
+const defaultVideos = ["Morocco travel","Funny cats","Football skills","Cooking","Music 2024","Gaming"];
+function searchVideo(){
+  let query = document.getElementById('q').value;
+  if(!query) return;
+  playSearch(query);
+  showResults(query);
+}
+function playSearch(query){
+  document.getElementById('playerWrap').style.display='block';
+  document.getElementById('player').src = "https://www.youtube.com/embed?listType=search&list=" + encodeURIComponent(query);
+  window.scrollTo({top:200,behavior:'smooth'});
+}
+function showResults(query){
+  let container = document.getElementById('videos');
+  container.innerHTML="";
+  for(let i=0;i<6;i++){
+    let div = document.createElement('div');
+    div.className='video-card';
+    div.innerHTML = `<img src="https://via.placeholder.com/320x180?text=${encodeURIComponent(query)}+${i+1}"><p>${query} - Video ${i+1}</p>`;
+    div.onclick = ()=> playSearch(query + " " + (i+1));
+    container.appendChild(div);
+  }
+}
+document.getElementById('q').addEventListener('keypress',function(e){ if(e.key==='Enter') searchVideo(); });
+showResults("Trending");
+</script>
+</body>
+</html>
